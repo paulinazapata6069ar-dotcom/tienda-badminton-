@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> 
+    <meta charset="UTF-8" />
+    <title>Badminton Store</title>
+    <style>
+        body {  
+            background-color: #ffd1dc; /* rosa pastel */
+            font-family: Arial, sans-serif;
+        }
+        h1 { 
+            color: #FF0000;
+        }
+        .info-extra {
+            background-color: #fff0f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .info-extra h2 {
+            color: #c2185b;
+        }
+        .info-extra p {
+            margin-bottom: 10px;
+        }
+
+        /* Tabla con estilo */
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            margin: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+        table th, table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* Contenedor para imágenes juntas */
+        .imagenes-juntas {
+            display: flex;
+            justify-content: center; /* centrar horizontalmente */
+            gap: 10px; /* espacio entre las dos imágenes */
+            margin: 0 20px 40px 20px; /* margen arriba y abajo */
+            max-width: 600px;
+        }
+
+        .imagenes-juntas img {
+            width: 280px; /* tamaño un poco más grande */
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Bienvenidos a mi tienda deportiva</h1>
+
+    <p>
+        En Racket Center, te ofrecemos asesoría personalizada y el mejor equipo deportivo para deportes de raqueta.
+        Desde principiantes hasta expertos, contamos con productos de alta calidad y detalles técnicos que te ayudarán a alcanzar tus objetivos deportivos, este lugar te ofrece productos de buena calidad, contamos con las 3 B, Bueno,Bonito y Barato.
+    </p>
+
+    <a href="https://share.google/xX8KE3Z8v24ZMLpR3" target="_blank">Visita mi tienda</a>
+    <a href= "_blank">visita mi juego</a>"<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Mini Juego Bádminton</title>
+<style>
+  body { background: #e0f7fa; display: flex; flex-direction: column; align-items: center; font-family: Arial, sans-serif; }
+  canvas { background: #fff; margin-top: 30px; border: 2px solid #00796b; border-radius: 8px; }
+  h1 { color: #00796b; margin-top: 20px; }
+  p { color: #004d40; }
+</style>
+</head>
+<body>
+  <h1>Mini Juego Bádminton</h1>
+  <p>Usa W y S para mover tu raqueta</p>
+  <canvas id="c" width="700" height="400"></canvas>
+<script>
+const c=document.getElementById('c'),ctx=c.getContext('2d');
+let pY=c.height/2-40, compY=c.height/2-40, bX=c.width/2,bY=c.height/2, bSpeedX=5,bSpeedY=3, pW=10,pH=80;
+function draw(){ 
+  ctx.fillStyle='#e0f7fa'; ctx.fillRect(0,0,c.width,c.height);
+  ctx.fillStyle='#c2185b'; ctx.fillRect(10,pY,pW,pH);
+  ctx.fillStyle='#0097a7'; ctx.fillRect(c.width-20,compY,pW,pH);
+  ctx.beginPath(); ctx.fillStyle='#000'; ctx.arc(bX,bY,10,0,Math.PI*2); ctx.fill();
+}
+function update(){
+  bX+=bSpeedX; bY+=bSpeedY;
+  if(bY<=0||bY>=c.height) bSpeedY=-bSpeedY;
+  if(bX<=20 && bY>pY && bY<pY+pH) bSpeedX=-bSpeedX;
+  if(bX>=c.width-20 && bY>compY && bY<compY+pH) bSpeedX=-bSpeedX;
+  compY+=(compY+pH/2<bY)?3:-3;
+  compY=Math.min(Math.max(compY,0),c.height-pH);
+  if(bX<0||bX>c.width){ bX=c.width/2; bY=c.height/2; bSpeedX=-bSpeedX; bSpeedY=3;}
+}
+document.addEventListener('keydown',e=>{
+  if(e.key=='w'||e.key=='W') pY=Math.max(pY-20,0);
+  else if(e.key=='s'||e.key=='S') pY=Math.min(pY+20,c.height-pH);
+});
+function loop(){ update(); draw(); requestAnimationFrame(loop); }
+loop();
+</script>
+</body>
+</html>
+
+
+    <ul>
+        <li>Encordado de raqueta</li>
+        <li>Grip</li>
+        <li>Estuches</li>
+    </ul>
+
+    <ol>
+        <li>Bueno</li>
+        <li>Bonito</li>
+        <li>Barato</li>
+    </ol>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mostrar Imagen</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ventas</title>
+  <style>
+    .imagen-izquierda {
+      float: left;         /* Mueve la imagen a la izquierda */
+      margin-right: 20px;  /* Espacio entre imagen y texto */
+      width: 500px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ventas</h1>
+  <!-- Imagen alineada a la izquierda -->
+  <img class="imagen-izquierda" src="https://images.pexels.com/photos/3660204/pexels-photo-3660204.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Venta">
+
+  <p>
+    Aquí puedes ver un ejemplo de los productos:
+  </p>
+
+</body>
+</html>
+
+
+    <!-- Tabla de productos -->
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>precios</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Raqueta</td>
+                <td>$280.000</td>
+            </tr>
+            <tr>
+                <td>Zapatos</td>
+                <td>$400.000</td>
+            </tr>
+            <tr>
+                <td>Volante</td>
+                <td>$180.000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Imágenes juntas abajo -->
+    <div class="imagenes-juntas">
+        <img src="" />
+        <img src="https://www.paralympic.org/sites/default/files/2019-09/Lima-2019-day-9-badminton.jpg" alt="Imagen deportiva 2" />
+    </div>
+
+    <!-- Texto adicional debajo de la imagen -->
+    <div class="info-extra">
+        <h2>¿Por Qué Elegir Racket Center?</h2>
+        <p><strong>En Racket Center</strong> no solo vendemos artículos deportivos, ayudamos a jugadores de todos los niveles a alcanzar su mejor versión.</p>
+        
+        <p><strong>Asesoría Profesional Especializada:</strong><br>
+        Nuestros especialistas te guían para elegir el equipo perfecto, adaptado a tu nivel y deporte.</p>
+        
+        <p><strong>Variedad en Productos de Alto Rendimiento:</strong><br>
+        Ofrecemos una amplia selección de raquetas, calzado y accesorios de marcas reconocidas mundialmente.</p>
+        
+        <p><strong>Compra Segura y Envíos Rápidos:</strong><br>
+        Disfruta de una experiencia de compra confiable y recibe tus productos en tiempo récord.</p>
+    </div>
+<ul>
+        <li>Mas informacion:3108443463</li>
+        <li>Leider Mena</li>
+        <li>Paulina Zapata</li>
+    </ul>
+
+</body>
+</html>   
+ 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Insertado</title>
+</head>
+<body>
+
+  <h1>Explicacion badminton</h1>
+
+  <iframe width="560" height="315" 
+          src="https://www.youtube-nocookie.com/embed/cNh_m9AQZcY?si=MJmwyYmX5e4Bh7f4" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+  </iframe>
+
+</body>
+</html>
